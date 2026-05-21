@@ -400,14 +400,22 @@ public class Main {
     <textarea placeholder="間違い箇所と修正内容をセットで記述してください"></textarea>
     <button class="btn-check" onclick="showTextExp('q15')">答えを確認する</button>
   </div>
-  <div class="explanation" id="exp-q15">
-    <div class="ans-label">✅ 正解</div>
-    <strong>指摘箇所：</strong>Main クラスの <code>h1.name = "とぴあ太郎";</code><br>
-    <strong>修正内容：</strong>Hero クラスの <code>name</code> フィールドには <code>private</code> 修飾子がついているため、Main クラスから直接アクセスできない。セッターメソッド <code>setName()</code> を使う。<br><br>
-    キーワード：「<code>private</code>」「<code>setName()</code>」<br>
-    ポイント：フィールドへの直接アクセス（<code>h1.name</code>）とメソッド呼び出し（<code>h1.setName()</code>）の区別
-    <pre><code>// 修正前（エラー）
+ <!-- 問15 の explanation 部分のみ差し替え -->
+<div class="explanation" id="exp-q15">
+  <div class="ans-label">✅ 正解</div>
+  <strong>指摘箇所：</strong>Main クラスの <code>h1.name = "とぴあ太郎";</code><br>
+  <strong>修正内容：</strong><code>h1.setName("とぴあ太郎")</code> に変更する。<br><br>
+  Hero クラスの <code>name</code> フィールドには <code>private</code> 修飾子がついているため、Main クラスから直接アクセス（<code>h1.name</code>）できない。セッターメソッドを使う必要がある。<br><br>
+  キーワード：「<code>private</code>」「<code>setName()</code>」<br>
+  ポイント：フィールドへの直接アクセスとメソッド呼び出しの区別ができているか<br>
+  　　　　　❌ <code>h1.name</code> → ✅ <code>h1.setName("とぴあ太郎")</code>
+  <pre><code>// 修正前（エラー）
 h1.name = "とぴあ太郎";
+
+// 修正後（完答）
+h1.setName("とぴあ太郎");</code></pre>
+</div>
+
 
 // 修正後
 h1.setName("とぴあ太郎");</code></pre>
